@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/form.css">
+    <link rel="stylesheet" href="/static/css/input.css">
+    <script src="/static/js/jquery-1.4.2.js"></script>
+</head>
+<body>
+<h2 style="background-color: navajowhite;color: black;">return success</h2>
+<h1 style="background-color: azure;color: black;">User message</h1>
+<div class="from">
+    <form action="/index/" method="post">
+        <label>
+            <input type="text" name="username"/>
+        </label>
+        <label>
+            <input type="password" name="password"/>
+        </label>
+        <input type="submit" value="submit"/>
+    </form>
+</div>
+<div class="input">
+    <table border="1">
+        <thead>
+        <th>用户名</th>
+        <th>密码</th>
+        </thead>
+        <tbody>
+        {% for line in data %}
+            <tr>
+                <td>{{ line.user }}</td>
+                <td>{{ line.pwd }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
